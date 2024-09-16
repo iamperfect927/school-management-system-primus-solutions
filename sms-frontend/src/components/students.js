@@ -12,6 +12,7 @@ export default function Students() {
     const [students, setStudents] = useState([]);
     const [selectedStudentID, setSelectedStudentID] = useState(null)
     const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     // //toast notifications actions
     const notifyDeleteSuccess = () => toast.success('Student deleted successfully!', {autoClose: 2000});
@@ -83,7 +84,7 @@ export default function Students() {
                                 <tbody>
                                     {students.length > 0 ? (
                                         students.map(student => (
-                                            <tr key={student.id} className={`hover:bg-secondary click:text-white bg-table_bg space-y-3`} onClick={() => studentInfoID(student.id)}>
+                                            <tr key={student.id} className={`cursor-pointer hover:bg-secondary bg-table_bg space-y-3 ${selectedStudentID === student.id ? 'text-white bg-secondary' : '' }`} onClick={() => studentInfoID(student.id)}>
                                                 <td className="text-center lg:text-start ps-3 py-5 text-xs font-medium text-table_head mb-3 text-table_body ">{student.id}</td>
                                                 <td className="text-center lg:text-start py-1 py-5 text-xs font-medium text-table_head mb-3 text-table_body ">{student.first_name}</td>
                                                 <td className="text-center lg:text-start py-1 py-5 text-xs font-medium text-table_head mb-3  text-table_body">{student.last_name}</td>

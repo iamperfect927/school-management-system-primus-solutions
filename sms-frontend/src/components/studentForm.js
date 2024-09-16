@@ -96,16 +96,17 @@ export default function StudentForm() {
             <SideBar currentRoute={"/studentForm"}/>
             <div className="w-full">
                     <form onSubmit={handleSubmit} className=" md:ml-72 lg:ml-80 pt-3 md:w-2/4 lg:w-2/3  text-header mt-10 ">
-                    <h1 className="text-table_head text-3xl mb-16 font-semibold md:text-center lg:ml-10">{isEditing ? 'Update Student' : 'Add Student'}</h1>
+                    <h1 className="text-table_head text-3xl mb-16 font-semibold md:text-center lg:text-start lg:ml-10">{isEditing ? 'Update Student' : 'Add Student'}</h1>
                     <div className="flex flex-col md:flex-col lg:flex-row space-y-7 md:space-y-7 lg:space-y-0 md:space-x-0 lg:space-x-9 mb-10 lg:ml-10">
                         <div className="flex flex-col">
                             <label className="text-sm font medium ps-1">First Name</label>
                             <input 
                                 type="text"
                                 name="first_name"
+                                placeholder="djiela"
                                 value={formData.first_name}
                                 onChange={handleInputChange}
-                                className="border py-2 lg:w-80 pl-1"
+                                className="border py-2 lg:w-80 pl-1 "
                                 required
                             />
                         </div>
@@ -114,6 +115,7 @@ export default function StudentForm() {
                             <input 
                                 type="text"
                                 name="last_name"
+                                placeholder="parfait"
                                 value={formData.last_name}
                                 onChange={handleInputChange}
                                 className="border py-2 lg:w-80 md:pl-1"
@@ -128,6 +130,7 @@ export default function StudentForm() {
                             <input 
                                 type="text"
                                 name="email"
+                                placeholder="djielaparfait99@gmail.com"
                                 value={formData.email}
                                 onChange={handleInputChange}
                                 className="border py-2 lg:w-80 pl-1"
