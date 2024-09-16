@@ -19,7 +19,7 @@ export default function Students() {
     const notifyDeleteError = () => toast.error('Failed to deleted student!', {autoClose: 2000});
 
     const studentInfoID = (studentId) => {
-        // const id = "hello";
+        // const id = "1";
         setSelectedStudentID(studentId)
         // console.log(studentId);
     }
